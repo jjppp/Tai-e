@@ -67,6 +67,11 @@
     only-app: true # only track modifications on the objects
     # created in application code
 
+- description: find objects that may escape their allocation thread
+  analysisClass: pascal.taie.analysis.pta.client.ThreadEscapeAnalysis
+  id: thread-escape
+  requires: [ pta ]
+
 - description: throw analysis
   analysisClass: pascal.taie.analysis.exception.ThrowAnalysis
   id: throw
