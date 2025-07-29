@@ -3,11 +3,24 @@
 ## [Unreleased] - 2025-02-16
 
 ### New Features
+- Add a format check for command-line arguments.
 - Pointer analysis
   - Add special handling for zero-length arrays to enhance PTA precision.
+  - Add client may-alias-pair to count the number of variable pairs that may alias.
 
 ### Fixes
+- Fix `UnionFind.setCount()` under concurrent usage.
+- Fix the k-value setup for the CustomEntryPoint testcase.
+- Fix `ReflectionAnalysis` plugin to enable `AnnotationModel` only for Java 5+.
 - Fix NPE in Zipper-e pre-analysis.
+- Fix static fields handling in `UnsafeModel` to prevent invalid instance field access.
+- Fix the missing `STATIC` modifier of static phantom fields in `ClassHierarchyImpl`.
+- Fix NPE in `ExceptionAnalysis`.
+- Fix `SideEffectAnalysis` incorrect behavior when `only-app` is false.
+- Fix mahjong's `FieldPointsToGraph` by handling non-functional `MockObj` in
+  `PointerAnalysisResultImpl`.
+- Fix the detection of jar files in `BenchmarkRunner`.
+
 
 ## [0.5.1] - 2024-12-31
 
