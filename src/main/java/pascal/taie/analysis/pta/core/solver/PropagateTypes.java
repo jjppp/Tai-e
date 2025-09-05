@@ -44,9 +44,8 @@ public class PropagateTypes {
     public boolean isAllowed(Type type) {
         if (type instanceof ReferenceType) {
             return (type instanceof NullType) ? allowNull : allowReference;
-        } else if (type instanceof PrimitiveType primitiveType) {
+        } else if (type instanceof PrimitiveType primitiveType)
             return allowedPrimitives.contains(primitiveType);
-        }
         return false;
     }
 
