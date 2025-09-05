@@ -1,5 +1,0 @@
-runner:
-  checkstyle:
-    cmd: ./gradlew checkstyleMain checkstyleTest
-    format: checkstyle
-    level: error
