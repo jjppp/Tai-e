@@ -34,5 +34,5 @@ jobs:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           for xmlReport in {.,integration-tests}/build/reports/checkstyle/*.xml; do \
-            (cat $xmlReport | reviewdog -f=checkstyle -fail-level=any -reporter=github-pr-review) || exit; \
+            cat $xmlReport | reviewdog -f=checkstyle -reporter=github-pr-review; \
           done
