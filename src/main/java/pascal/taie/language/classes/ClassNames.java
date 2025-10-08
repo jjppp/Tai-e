@@ -147,6 +147,8 @@ public final class ClassNames {
 
     public static final String ANNOTATION = "java.lang.annotation.Annotation";
 
+    public static final String CONSUMER = "java.util.function.Consumer";
+
     // Suppresses default constructor, ensuring non-instantiability.
     private ClassNames() {
     }

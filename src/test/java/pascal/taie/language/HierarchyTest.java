@@ -29,6 +29,7 @@ import pascal.taie.World;
 import pascal.taie.ir.proginfo.FieldRef;
 import pascal.taie.ir.proginfo.FieldResolutionFailedException;
 import pascal.taie.ir.proginfo.MethodRef;
+import pascal.taie.language.classes.ClassNames;
 import pascal.taie.language.classes.JClass;
 import pascal.taie.language.classes.JField;
 import pascal.taie.language.classes.JMethod;
@@ -55,6 +56,17 @@ public class HierarchyTest {
     }
 
     // ---------- Test subclass checking Subclass() ----------
+
+    @Test
+    void testFunctionalInterface() {
+        Main.buildWorld("-pp",
+                "-cp", "src/test/resources/world",
+                "-m", "FunctionalInterface");
+        var hierarchy = World.get().getClassHierarchy();
+        var myConsumer = hierarchy.getClass("MyConsumer");
+        var consumer = hierarchy.getJREClass(ClassNames.CONSUMER);
+        assertTrue(hierarchy.isSubclass(consumer, myConsumer));
+    }
 
     /**
      * Test interface and subinterfaces.
