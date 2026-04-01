@@ -67,6 +67,11 @@
     only-app: true # only track modifications on the objects
     # created in application code
 
+- description: identify possible serialization failure
+  analysisClass: pascal.taie.analysis.pta.client.MayFailSerialization
+  id: may-fail-serialization
+  requires: [ pta ]
+
 - description: throw analysis
   analysisClass: pascal.taie.analysis.exception.ThrowAnalysis
   id: throw

@@ -23,6 +23,9 @@
 package pascal.taie.analysis.pta;
 
 import pascal.taie.Main;
+import pascal.taie.analysis.pta.client.MayFailCast;
+import pascal.taie.analysis.pta.client.MayFailSerialization;
+import pascal.taie.analysis.pta.client.PolymorphicCallSite;
 import picocli.CommandLine;
 
 import java.io.File;
@@ -97,8 +100,9 @@ public class BenchmarkRunner {
                         .stream()
                         .map(e -> e.getKey() + ":" + e.getValue())
                         .collect(Collectors.joining(";")),
-                "-a", "may-fail-cast",
-                "-a", "poly-call");
+                "-a", MayFailCast.ID,
+                "-a", PolymorphicCallSite.ID,
+                "-a", MayFailSerialization.ID);
         return args.toArray(new String[0]);
     }
 
